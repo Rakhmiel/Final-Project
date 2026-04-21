@@ -1,18 +1,13 @@
 // this is the algorith tester 
 //
 public class algorithmTest {
-    double salary;
-    double medianWage;
-    double gdpc;
-    double success;
+    private personObject[] = new personObject[];
+    
     public static void main (String[] args) {
-        salary = args[0];
-        medianWage = args[1];
-        gdpc = args[2];
-        success = calculateSuccess(this.salary, this.medianWage, this.gdpc)
+        double salary = args[0];
+        double medianWage = args[1];
+        double gdpc = args[2];
+        String major = args[3];
     }
-    private double calculateSuccess (double salary, double medianWage, double gdpc) {
-        success = salary / ((medianWage * gdpc) * 10);
-        return success
-    }
+    private addToArray()
 }
