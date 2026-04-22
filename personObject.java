@@ -1,4 +1,4 @@
-public class personObject {
+public class personObject implements Comparable<Object> {
     private double salary;
     private double medianWage;
     private double gdpc;
@@ -9,7 +9,7 @@ public class personObject {
         this.salary = salary;
         this.medianWage = medianWage;
         this.gdpc = gdpc;
-        this.major = 
+        this.major = major;
         this.success = calculateSuccess(this.salary, this.medianWage, this.gdpc);
     }
     private double calculateSuccess (double salary, double medianWage, double gdpc) {
@@ -24,5 +24,9 @@ public class personObject {
     }
     public double getSuccess() {
         return success;
+    }
+    @Override
+    public int compareTo(Object Other) {
+        return (int) this.getSalary() - (personObject) Other.getSalary();
     }
 }
