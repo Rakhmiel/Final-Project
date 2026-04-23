@@ -1,7 +1,11 @@
 // this is the algorith tester 
 //
+import edu.yu.cs.com1320.project.*;
+import java.util.*;
+
 public class algorithmTest {
     private personObject[] = new personObject[];
+    private HashMap<String, personObject> people = new HashMap<>();
 
     public static void main (String[] args) {
         double salary = args[0];
