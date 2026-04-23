@@ -1,4 +1,5 @@
-import java.util.Objects;
+import java.util.*;
+import edu.yu.cs.com1320.project.*;
 
 public class personObject implements Comparable<Object> {
     private double salary;
@@ -8,6 +9,8 @@ public class personObject implements Comparable<Object> {
     private String major;
     private String name;
     private int uniqueID;
+    private majorObject totalCalculator;
+    private static Set<String> majors = new HashSet<>();
 
     public personObject(double salary, double medianWage, double gdpc, String major, String name) {
         this.salary = salary;
@@ -16,6 +19,7 @@ public class personObject implements Comparable<Object> {
         this.major = major.strip().toUpperCase();
         this.success = calculateSuccess(this.salary, this.medianWage, this.gdpc);
         this.name = name;
+        this.totalCalculator = new majorObject(salary, major);
         //calculates the individual's unique ID used, used when comparing two people
         this.uniqueID = Objects.hash(salary, medianWage, gdpc, major, name);
     }

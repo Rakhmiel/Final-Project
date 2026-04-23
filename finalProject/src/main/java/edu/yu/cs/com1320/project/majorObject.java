@@ -6,7 +6,18 @@ public class majorObject implements Comparable<Object> {
     private double averageSalary;
     private personObject[] = new personObject[];
 
-    public majorObject(String major) {
+    public majorObject(Double salary, String major) {
         this.major = major;
+        this.totalSalary += salary;
+    }
+    @Override
+    //compares the salaries
+    public int compareTo(Object Other) {
+        return (int) this.getSalary() - (personObject) Other.getSalary();
+    }
+    @Override
+    //hashes them based on their major
+    public int hashCode() {
+        return Objects.hash(major);
     }
 }
