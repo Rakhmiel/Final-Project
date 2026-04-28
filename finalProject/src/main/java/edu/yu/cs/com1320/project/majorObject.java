@@ -15,11 +15,13 @@ public class majorObject implements Comparable<Object> {
         this.major = major;
         this.totalSalary = 0;
         this.averageSalary = 0;
+        this.max = 0;
+        this.min = 0;
     }
     public void addSalary(double salary) {
         totalsalary += salary;
         timesAccessed++;
-        averageSalary = averageSalary / timesAccessed;
+        averageSalary = totalSalary / timesAccessed;
         if (salary > max) {
             max = salary;
         }
