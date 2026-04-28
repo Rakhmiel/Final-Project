@@ -164,10 +164,13 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
                 current = next;
             }
         }
+    /**
+    * @return List of majorObjects
+    */
     @SuppressWarnings("unchecked")
-    public List<majorObject> getMajors() {
+    public ArrayList<majorObject> getMajors() {
         //makes a major list
-        List<E> <majorObject> majors = new ArrayList<>();
+        ArrayList<majorObject> majors = new ArrayList<>();
         //iterates through the buckets in the array
         for (Entry<Key, Value> bucket : dataArray) {
             //iterates through the people in the array

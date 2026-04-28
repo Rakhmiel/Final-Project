@@ -7,18 +7,29 @@ public class majorObject implements Comparable<Object> {
     private String major;
     private double totalSalary;
     private double averageSalary;
-    private personObject[] = new personObject[];
+    private int timesAccessed = 0;
+    private double min;
+    private double max;
 
     public majorObject(String major) {
         this.major = major;
         this.totalSalary = 0;
+        this.averageSalary = 0;
     }
     public void addSalary(double salary) {
         totalsalary += salary;
+        timesAccessed++;
+        averageSalary = averageSalary / timesAccessed;
+        if (salary > max) {
+            max = salary;
+        }
+        if (salary < min) {
+            min = salary;
+        }
     }
     @Override
     public String toString() {
-        String data = String.format("Major: %s Salary %d" major, totalSalary);
+        String data = String.format("Major: " + major + "Average Salary: " + averageSalary);
         return data;
     }
 
