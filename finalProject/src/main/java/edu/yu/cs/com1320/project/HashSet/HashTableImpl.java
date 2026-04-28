@@ -19,10 +19,14 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
     private personObject[] dataArray;
     private int size;
     private int totalSalary;
+    private int arrayLength;
     //Constructor
+    /**
+     * @param arrayLength the amount of groups of objects you want to insert (majors, etc)
+     */
     @SuppressWarnings("unchecked")
-    public HashTableImpl() {
-        this.dataArray = (personObject[]) new Entry[20];
+    public HashTableImpl(int arrayLength) {
+        this.dataArray = (personObject[]) new Entry[arrayLength];
     }
     /**
      * @param k the key whose value should be returned
