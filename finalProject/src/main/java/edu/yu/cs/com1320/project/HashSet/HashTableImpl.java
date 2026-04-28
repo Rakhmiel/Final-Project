@@ -1,11 +1,12 @@
 package edu.yu.cs.com1320.project.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-import edu.yu.cs.com1320.project.HashTable;
 import edu.yu.cs.com1320.project.*;
 
 /**
@@ -15,12 +16,13 @@ import edu.yu.cs.com1320.project.*;
  * @param <Value>
  */
 public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
-    private Entry<Key, Value>[] dataArray;
+    private personObject[] dataArray;
     private int size;
+    private int totalSalary;
     //Constructor
     @SuppressWarnings("unchecked")
     public HashTableImpl() {
-        this.dataArray = (Entry<Key, Value>[]) new Entry[5];
+        this.dataArray = (personObject[]) new Entry[5];
     }
     /**
      * @param k the key whose value should be returned
@@ -49,13 +51,13 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
      * @return if the key was already present in the HashTable, return the previous value stored for the key. If the key was not already present, return null.
      */
     @Override
-    public Value put(Key key, Value value) {
+    public Value put(Key key, Value value, Int ID) {
         int index = hashValue(key);
-        Entry<Key, Value> current = this.dataArray[index];
+        personObject current = this.dataArray[index];
         Entry<Key, Value> previous = null;
 
         while (current != null) {
-            if (current.key.equals(key)) {
+            if (current.getID().equals(ID)) {
                 Value oldValue = current.value;
                 if (value == null) {
                         //deletes it
@@ -162,6 +164,25 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
                 current = next;
             }
         }
+    @SuppressWarnings("unchecked")
+    public List<majorObject> getMajors() {
+        //makes a major list
+        List<E> <majorObject> majors = new ArrayList<>();
+        //iterates through the buckets in the array
+        for (Entry<Key, Value> bucket : dataArray) {
+            //iterates through the people in the array
+            Entry<Key, Value> current = bucket;
+            //creates a major object
+            majorObject major = new majorObject(Value.getMajor);
+            //adds the salary of each person to the totalSalary of the major object
+            while (current != null) {
+                major.addSalary(Value.getSalary);
+                current = current.next;
+            }
+            //adds the major to the list
+            majors.add(major);
+        }
+        return majors;
 
     }
 
@@ -169,7 +190,7 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
         return Math.abs(key.hashCode() % this.dataArray.length);
     }
     //the linked list class
-   /* private static class Entry<Key, Value> {
+    private static class Entry<Key, Value> {
         private Key key;
         private Value value;
         Entry<Key, Value> next;
@@ -180,5 +201,4 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
             this.next = next;
     }
 }
-    */
 }

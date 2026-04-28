@@ -9,14 +9,17 @@ public class majorObject implements Comparable<Object> {
     private double averageSalary;
     private personObject[] = new personObject[];
 
-    public majorObject(personObject person) {
-        this.major = personObject.getMajor();
-        this.totalSalary += personObject.getSalary();
+    public majorObject(String major) {
+        this.major = major;
+        this.totalSalary = 0;
     }
-    public add(personObject person) throws IOException {
-        if (person.getMajor() != major) {
-            throw new IOException("Incorrect major.");
-        }
+    public void addSalary(double salary) {
+        totalsalary += salary;
+    }
+    @Override
+    public String toString() {
+        String data = String.format("Major: %s Salary %d" major, totalSalary);
+        return data;
     }
 
     @Override

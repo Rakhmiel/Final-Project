@@ -20,6 +20,9 @@ public class personObject implements Comparable<Object> {
         this.success = calculateSuccess(this.salary, this.medianWage, this.gdpc);
         this.name = name;
         this.totalCalculator = new majorObject(salary, major);
+        if (majors.contains(major)) {
+            majors.
+        }
         //calculates the individual's unique ID used, used when comparing two people
         this.uniqueID = Objects.hash(salary, medianWage, gdpc, major, name);
     }
