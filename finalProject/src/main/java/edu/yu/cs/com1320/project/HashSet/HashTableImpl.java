@@ -22,7 +22,7 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
     //Constructor
     @SuppressWarnings("unchecked")
     public HashTableImpl() {
-        this.dataArray = (personObject[]) new Entry[5];
+        this.dataArray = (personObject[]) new Entry[20];
     }
     /**
      * @param k the key whose value should be returned
@@ -82,10 +82,11 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
             if (value == null) {
                 return null;
             }
-            if (this.size >= dataArray.length) {
+            /* if (this.size >= dataArray.length) {
                 resize();
                 index = hashValue(key);
             }
+                */
             this.dataArray[index] = new Entry<>(key, value, this.dataArray[index]);
             this.size++;
             return null;
@@ -145,6 +146,7 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
     public int size() {
         return size;
     }
+    /*
     //resizing
     @SuppressWarnings("unchecked")
     private void resize() {
@@ -164,6 +166,8 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
                 current = next;
             }
         }
+    }
+    */
     /**
     * @return List of majorObjects
     */
