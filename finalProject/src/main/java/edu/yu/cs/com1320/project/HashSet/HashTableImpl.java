@@ -15,7 +15,8 @@ import edu.yu.cs.com1320.project.*;
  * @param <Key>
  * @param <Value>
  */
-public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
+@SuppressWarnings("unchecked")
+public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int>{
     private personObject[] dataArray;
     private int size;
     private int totalSalary;
@@ -24,7 +25,6 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
     /**
      * @param arrayLength the amount of groups of objects you want to insert (majors, etc)
      */
-    @SuppressWarnings("unchecked")
     public HashTableImpl(int arrayLength) {
         this.dataArray = (personObject[]) new Entry[arrayLength];
     }
@@ -32,7 +32,6 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
      * @param k the key whose value should be returned
      * @return the value that is stored in the HashTable for k, or null if there is no such key in the table
      */
-    @Override
     public Value get(Key k) {
         if (k == null) {
             return null;
@@ -54,8 +53,7 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
      *          To delete an entry, put a null value.
      * @return if the key was already present in the HashTable, return the previous value stored for the key. If the key was not already present, return null.
      */
-    @Override
-    public Value put(Key key, Value value, Int ID) {
+    public Value put(Key key, Value value, int ID) {
         int index = hashValue(key);
         personObject current = this.dataArray[index];
         Entry<Key, Value> previous = null;
@@ -101,7 +99,6 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
      * @return true if the given key is present in the hashtable as a key, false if not
      * @throws NullPointerException if the specified key is null
      */
-    @Override
     public boolean containsKey(Key key) {
         if (key == null) {
             throw new NullPointerException();
@@ -113,7 +110,6 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
      * @return an unmodifiable set of all the keys in this HashTable
      * @see java.util.Collections#unmodifiableSet(Set)
      */
-    @Override
     public Set<Key> keySet() {
         Set<Key> keys = new HashSet<>();
         for (int i = 0; i < dataArray.length; i++) {
@@ -130,7 +126,6 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
      * @return an unmodifiable collection of all the values in this HashTable
      * @see java.util.Collections#unmodifiableCollection(Collection)
      */
-    @Override
     public Collection<Value> values() {
         Set<Value> values = new HashSet<>();
         for (int i = 0; i < dataArray.length; i++) {
@@ -146,7 +141,6 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
     /**
      * @return how entries there currently are in the HashTable
      */
-    @Override
     public int size() {
         return size;
     }
