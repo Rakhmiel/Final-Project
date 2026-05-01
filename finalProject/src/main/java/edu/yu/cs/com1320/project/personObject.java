@@ -52,7 +52,7 @@ public class personObject implements Comparable<Object> {
         return Objects.hash(major);
     }
     //this is used to see if two people are equal
-    private int getID() {
+    public int getID() {
         return this.uniqueID;
     }
     @Override

@@ -7,7 +7,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import edu.yu.cs.com1320.project.*;
+import edu.yu.cs.com1320.project.HashTable;
+import edu.yu.cs.com1320.project.personObject;
+import edu.yu.cs.com1320.project.majorObject;
 
 /**
  * Instances of HashTable should be constructed with two type parameters, one for the type of the keys in the table and one for the type of the values
@@ -15,23 +17,22 @@ import edu.yu.cs.com1320.project.*;
  * @param <Key>
  * @param <Value>
  */
-@SuppressWarnings("unchecked")
-public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int>{
-    private personObject[] dataArray;
+public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
+    private Entry<Key, Value>[] dataArray;
     private int size;
-    private int totalSalary;
-    private int arrayLength;
     //Constructor
     /**
      * @param arrayLength the amount of groups of objects you want to insert (majors, etc)
      */
+    @SuppressWarnings("unchecked")
     public HashTableImpl(int arrayLength) {
-        this.dataArray = (personObject[]) new Entry[arrayLength];
+        this.dataArray = (Entry<Key, Value>[]) new Entry[arrayLength];
     }
     /**
      * @param k the key whose value should be returned
      * @return the value that is stored in the HashTable for k, or null if there is no such key in the table
      */
+    @Override
     public Value get(Key k) {
         if (k == null) {
             return null;
@@ -53,32 +54,36 @@ public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int
      *          To delete an entry, put a null value.
      * @return if the key was already present in the HashTable, return the previous value stored for the key. If the key was not already present, return null.
      */
-    public Value put(Key key, Value value, int ID) {
+    @Override
+    @SuppressWarnings("unchecked")
+    public personObject put(Key key, Value valueIn) {
         int index = hashValue(key);
-        personObject current = this.dataArray[index];
-        Entry<Key, Value> previous = null;
+        personObject current = (personObject) this.dataArray[index].value;
+        personObject previous = null;
+        personObject value = (personObject) valueIn;
 
         while (current != null) {
-            if (current.getID().equals(ID)) {
-                Value oldValue = current.value;
-                if (value == null) {
+            if (current.getID() == value.getID()) {
+                personObject oldValue = current;
+                if (valueIn == null) {
                         //deletes it
                         if (previous == null) {
-                            this.dataArray[index] = current.next;
+                            this.dataArray[index] = this.dataArray[index].next;
                         }
                         else {
-                            previous.next = current.next;
+                            this.dataArray[index - 1] = this.dataArray[index].next;
                         }
                         this.size--;
                     //overwrite an old value
                     } else {
-                        current.value = value;
+                        current = (personObject) valueIn;
                     }
                     return oldValue;
                 }
                 //complete overwrite
-                previous = current;
-                current = current.next;
+
+                previous = (personObject) this.dataArray[index].value;
+                current = (personObject) this.dataArray[index].next.value;
             }
             //if the key isnt found
             if (value == null) {
@@ -89,7 +94,7 @@ public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int
                 index = hashValue(key);
             }
                 */
-            this.dataArray[index] = new Entry<>(key, value, this.dataArray[index]);
+            this.dataArray[index] = new Entry<>(key, valueIn, this.dataArray[index]);
             this.size++;
             return null;
         }
@@ -99,6 +104,7 @@ public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int
      * @return true if the given key is present in the hashtable as a key, false if not
      * @throws NullPointerException if the specified key is null
      */
+    @Override
     public boolean containsKey(Key key) {
         if (key == null) {
             throw new NullPointerException();
@@ -110,6 +116,7 @@ public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int
      * @return an unmodifiable set of all the keys in this HashTable
      * @see java.util.Collections#unmodifiableSet(Set)
      */
+    @Override
     public Set<Key> keySet() {
         Set<Key> keys = new HashSet<>();
         for (int i = 0; i < dataArray.length; i++) {
@@ -126,6 +133,7 @@ public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int
      * @return an unmodifiable collection of all the values in this HashTable
      * @see java.util.Collections#unmodifiableCollection(Collection)
      */
+    @Override
     public Collection<Value> values() {
         Set<Value> values = new HashSet<>();
         for (int i = 0; i < dataArray.length; i++) {
@@ -141,6 +149,7 @@ public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int
     /**
      * @return how entries there currently are in the HashTable
      */
+    @Override
     public int size() {
         return size;
     }
@@ -177,20 +186,24 @@ public class HashTableImpl<Key, Value, int> implements HashTable<Key, Value, int
         for (Entry<Key, Value> bucket : dataArray) {
             //iterates through the people in the array
             Entry<Key, Value> current = bucket;
-            //creates a major object
-            majorObject major = new majorObject(Value.getMajor);
-            //adds the salary of each person to the totalSalary of the major object
-            while (current != null) {
-                major.addSalary(Value.getSalary);
-                current = current.next;
+            if (current == null) {
+                personObject currentPerson = (personObject) current.value;
+                //creates a major object
+                majorObject major = new majorObject(currentPerson.getMajor());
+                //adds the salary of each person to the totalSalary of the major object
+                while (current != null) {
+                    major.addSalary(currentPerson.getSalary());
+                    current = current.next;
+                    currentPerson = (personObject) current.value;
+                }
+                //adds the major to the list
+                majors.add(major);
             }
-            //adds the major to the list
-            majors.add(major);
         }
         return majors;
 
     }
-
+    @Override
     private int hashValue(Key key) {
         return Math.abs(key.hashCode() % this.dataArray.length);
     }

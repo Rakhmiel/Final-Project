@@ -9,7 +9,7 @@ import java.util.Set;
  * @param <Key>
  * @param <Value>
  */
-public interface HashTable<Key, Value, int> {
+public interface HashTable<Key, Value> {
     /**
      * @param k the key whose value should be returned
      * @return the value that is stored in the HashTable for k, or null if there is no such key in the table
@@ -22,7 +22,7 @@ public interface HashTable<Key, Value, int> {
      *          To delete an entry, put a null value.
      * @return if the key was already present in the HashTable, return the previous value stored for the key. If the key was not already present, return null.
      */
-    Value put(Key k, Value v, int ID);
+    personObject put(Key k, Value v);
 
     /**
      * @param key the key whose presence in the hashtabe we are inquiring about
