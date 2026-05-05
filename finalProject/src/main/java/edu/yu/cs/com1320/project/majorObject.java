@@ -1,11 +1,9 @@
 package edu.yu.cs.com1320.project;
-import java.io.IOException;
-import java.util.*;
 
-import edu.yu.cs.com1320.project.*;
+import java.util.Objects;
 
 public class majorObject implements Comparable<Object> {
-    private String major;
+    private final String major;
     private double totalSalary;
     private double averageSalary;
     private int timesAccessed = 0;
@@ -20,7 +18,7 @@ public class majorObject implements Comparable<Object> {
         this.min = 0;
     }
     public void addSalary(double salary) {
-        totalsalary += salary;
+        totalSalary += salary;
         timesAccessed++;
         averageSalary = totalSalary / timesAccessed;
         if (salary > max) {
@@ -30,16 +28,25 @@ public class majorObject implements Comparable<Object> {
             min = salary;
         }
     }
+    public double totalSalary() {
+        return totalSalary;
+    }
+    public double averageSalary() {
+        return averageSalary;
+    }
     @Override
     public String toString() {
-        String data = String.format("Major: " + major + "Average Salary: " + averageSalary);
+        String data = String.format("Major: " + major + "Average Salary: " + averageSalary + " People: " + timesAccessed + " Min: " + min + " Max: " + max);
         return data;
     }
-
+    public String major() {
+        return this.major;
+    }
     @Override
     //compares the salaries
     public int compareTo(Object Other) {
-        return (int) this.getMajor() - (personObject) Other.getMajor();
+        majorObject otherMajor = (majorObject) Other;
+        return (int) this.averageSalary() - (int) otherMajor.averageSalary();
     }
     @Override
     //hashes them based on their major
@@ -55,8 +62,8 @@ public class majorObject implements Comparable<Object> {
         if (this == other) {
             return true;
         }
-        other = (majorObject) other;
-        if (this.major() == other.major()) {
+        majorObject otherMajor = (majorObject) other;
+        if (this.major().equals(otherMajor.major())) {
             return true;
         }
         return false;
