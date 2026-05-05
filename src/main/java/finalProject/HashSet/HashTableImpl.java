@@ -1,14 +1,13 @@
 package finalProject.HashSet;
 
+import finalProject.HashTable;
+import finalProject.majorObject;
+import finalProject.personObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
-import edu.yu.cs.com1320.project.HashTable;
-import edu.yu.cs.com1320.project.majorObject;
-import edu.yu.cs.com1320.project.personObject;
 
 /**
  * Instances of HashTable should be constructed with two type parameters, one for the type of the keys in the table and one for the type of the values
