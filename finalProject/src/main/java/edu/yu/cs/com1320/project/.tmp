@@ -1,0 +1,44 @@
+{
+  "school": {
+    "name": "YeshivaUniversity",
+    "city": "NewYork",
+    "state": "NY",
+    "size": 2852
+  },
+  "admissions": {
+    "acceptance_rate": 0.5562
+  },
+  "outcomes": {
+    "earnings_6yr": 60252
+  },
+  "majors": {
+    "Finance": {
+      "jobs": {
+        "Financial Analyst": 99890
+,
+        "Accountant": 79100
+      }
+    },
+    "Computer Science": {
+      "jobs": {
+        "Software Developer": 127260
+,
+        "Data Scientist": 108020
+      }
+    },
+    "Biology": {
+      "jobs": {
+        "Lab Technician": null
+,
+        "Registered Nurse": 86110
+      }
+    },
+    "Business": {
+      "jobs": {
+        "Marketing Manager": 140040
+,
+        "Financial Analyst": 99890
+      }
+    }
+  }
+}
