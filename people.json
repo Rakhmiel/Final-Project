@@ -1,0 +1,106 @@
+{
+  "medianWage": 59000.0,
+  "gdpc": 82000.0,
+  "people": [
+    {
+      "name": "Alice Chen",
+      "age": 29,
+      "salary": 145000.0,
+      "gpa": 3.9,
+      "institution": "MIT",
+      "birthPlace": "San Francisco, CA",
+      "major": "COMPUTER SCIENCE",
+      "industry": "Technology"
+    },
+    {
+      "name": "Bob Martinez",
+      "age": 34,
+      "salary": 88000.0,
+      "gpa": 3.4,
+      "institution": "UT Austin",
+      "birthPlace": "Houston, TX",
+      "major": "MECHANICAL ENGINEERING",
+      "industry": "Manufacturing"
+    },
+    {
+      "name": "Carol Johnson",
+      "age": 41,
+      "salary": 175000.0,
+      "gpa": 3.7,
+      "institution": "Harvard",
+      "birthPlace": "New York, NY",
+      "major": "FINANCE",
+      "industry": "Banking"
+    },
+    {
+      "name": "David Kim",
+      "age": 26,
+      "salary": 52000.0,
+      "gpa": 3.1,
+      "institution": "State University",
+      "birthPlace": "Chicago, IL",
+      "major": "ENGLISH",
+      "industry": "Education"
+    },
+    {
+      "name": "Emma Davis",
+      "age": 31,
+      "salary": 120000.0,
+      "gpa": 3.8,
+      "institution": "Stanford",
+      "birthPlace": "Austin, TX",
+      "major": "COMPUTER SCIENCE",
+      "industry": "Technology"
+    },
+    {
+      "name": "Frank Wilson",
+      "age": 38,
+      "salary": 210000.0,
+      "gpa": 3.6,
+      "institution": "Wharton",
+      "birthPlace": "Boston, MA",
+      "major": "FINANCE",
+      "industry": "Consulting"
+    },
+    {
+      "name": "Grace Lee",
+      "age": 27,
+      "salary": 46000.0,
+      "gpa": 2.9,
+      "institution": "Community College",
+      "birthPlace": "Portland, OR",
+      "major": "LIBERAL ARTS",
+      "industry": "Retail"
+    },
+    {
+      "name": "Henry Brown",
+      "age": 45,
+      "salary": 95000.0,
+      "gpa": 3.3,
+      "institution": "Ohio State",
+      "birthPlace": "Columbus, OH",
+      "major": "NURSING",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Iris Patel",
+      "age": 33,
+      "salary": 160000.0,
+      "gpa": 3.95,
+      "institution": "Johns Hopkins",
+      "birthPlace": "Atlanta, GA",
+      "major": "BIOMEDICAL ENGINEERING",
+      "industry": "Pharmaceuticals"
+    },
+    {
+      "name": "James Nguyen",
+      "age": 30,
+      "salary": 78000.0,
+      "gpa": 3.2,
+      "institution": "UCLA",
+      "birthPlace": "Los Angeles, CA",
+      "major": "PSYCHOLOGY",
+      "industry": "Human Resources"
+    }
+  ]
+}
