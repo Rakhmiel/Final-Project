@@ -1,6 +1,6 @@
 # Economic Success Statistics App
 
-A terminal-based Java app that ingests person data from JSON and produces salary rankings and statistics broken down by major, industry, institution, and birth place. Each person receives a **success score** based on their salary relative to US economic benchmarks.
+A terminal-based Java app that processes person data from JSON and produces salary rankings and statistics broken down by major, industry, institution, and birth place. Each person receives a **success score** based on their salary relative to US economic benchmarks.
 
 ---
 
