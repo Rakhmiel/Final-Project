@@ -124,8 +124,17 @@ All fields are optional — missing numeric fields default to `0`/`false`.
  8. Rank occupations by job growth   — sorted highest to lowest (10-year rate)
  9. Load JSON file                   — merge records from a JSON file into the current session
 10. Save to JSON file                — write all current records to a JSON file
+11. Download fresh data              — fetch live data from APIs and optionally load it
  0. Exit
 ```
+
+### Option 11 — Download fresh data
+
+Fetches live data from College Scorecard, O\*NET, OEWS, and BLS OOH using built-in API keys and configuration, writes `universitydata.json`, and automatically loads it into the current session. No setup or prompts required.
+
+**This will take several minutes.** The download makes many API calls and scrapes BLS OOH pages with polite delays between requests. The program will print progress as it runs.
+
+After the download completes, the program will offer to load the new file into the current session.
 
 The CIP→SOC link (option 5) is driven by `relatedSocCodes` on each major. An occupation must be loaded in the same session for its data to appear; otherwise the SOC code is shown as `(not loaded)`.
 

@@ -39,6 +39,7 @@ public class comparisonProgram {
                 case "8"  -> rankOccupationsByGrowth();
                 case "9"  -> promptLoad();
                 case "10" -> promptSave();
+                case "11" -> downloadData();
                 case "0"  -> running = false;
                 default   -> System.out.println("Unknown option. Try again.");
             }
@@ -63,6 +64,7 @@ public class comparisonProgram {
         System.out.println(" 8. Rank occupations by job growth");
         System.out.println(" 9. Load JSON file");
         System.out.println("10. Save to JSON file");
+        System.out.println("11. Download fresh data");
         System.out.println(" 0. Exit");
         System.out.print("Choice: ");
     }
@@ -267,6 +269,19 @@ public class comparisonProgram {
                     majorList.size(), occList.size(), path);
         } catch (IOException e) {
             System.out.println("Save failed: " + e.getMessage());
+        }
+    }
+
+    // ── Download ──────────────────────────────────────────────────────────────
+
+    private static void downloadData() {
+        System.out.println("Downloading university data...");
+        try {
+            com.universitydata.DataFetcher.main(new String[]{});
+            System.out.println("Download complete. Loading data...");
+            loadFile("universitydata.json");
+        } catch (Exception e) {
+            System.out.println("Download failed: " + e.getMessage());
         }
     }
 
