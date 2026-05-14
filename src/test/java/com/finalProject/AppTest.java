@@ -1,4 +1,4 @@
-package finalProject;
+package com.finalProject;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

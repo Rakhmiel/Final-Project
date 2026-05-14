@@ -9,7 +9,7 @@ import com.finalProject.HashSet.HashTableImpl;
 
 public class comparisonProgram {
 
-    private static final String DEFAULT_FILE = "data.json";
+    private static final String DEFAULT_FILE = "universitydata.json";
 
     private static final HashTableImpl<String, MajorRecord>      MAJORS      = new HashTableImpl<>(64);
     private static final HashTableImpl<String, OccupationRecord> OCCUPATIONS = new HashTableImpl<>(64);

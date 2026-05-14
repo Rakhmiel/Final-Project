@@ -1,0 +1,117 @@
+{
+  "majors": [
+    {
+      "cipCode": "11.0101",
+      "cipTitle": "Computer and Information Sciences, General",
+      "credentialLevel": 3,
+      "annualCompletions": 130000,
+      "medianEarnings1Yr": 62000,
+      "medianEarnings4Yr": 95000,
+      "relatedSocCodes": ["15-1252.00", "15-1211.00", "15-1299.00"]
+    },
+    {
+      "cipCode": "52.0201",
+      "cipTitle": "Business Administration and Management, General",
+      "credentialLevel": 3,
+      "annualCompletions": 390000,
+      "medianEarnings1Yr": 48000,
+      "medianEarnings4Yr": 72000,
+      "relatedSocCodes": ["11-1021.00", "13-2011.00", "11-3031.00"]
+    },
+    {
+      "cipCode": "14.0101",
+      "cipTitle": "Engineering, General",
+      "credentialLevel": 3,
+      "annualCompletions": 25000,
+      "medianEarnings1Yr": 68000,
+      "medianEarnings4Yr": 105000,
+      "relatedSocCodes": ["17-2141.00", "17-2061.00", "17-2071.00"]
+    }
+  ],
+  "occupations": [
+    {
+      "socCode": "15-1252.00",
+      "title": "Software Developers",
+      "medianPay": 130160,
+      "wage10thPct": 75700,
+      "wage25thPct": 99000,
+      "wage75thPct": 165000,
+      "wage90thPct": 208000,
+      "employmentCount": 1847900,
+      "jobGrowthRate10Yr": 25.0,
+      "projectedOpenings": 162900,
+      "entryLevelEducation": "Bachelor's degree",
+      "brightOutlook": true
+    },
+    {
+      "socCode": "15-1211.00",
+      "title": "Computer Systems Analysts",
+      "medianPay": 103800,
+      "wage10thPct": 61900,
+      "wage25thPct": 78600,
+      "wage75thPct": 131700,
+      "wage90thPct": 163400,
+      "employmentCount": 611700,
+      "jobGrowthRate10Yr": 11.0,
+      "projectedOpenings": 55400,
+      "entryLevelEducation": "Bachelor's degree",
+      "brightOutlook": false
+    },
+    {
+      "socCode": "11-1021.00",
+      "title": "General and Operations Managers",
+      "medianPay": 101280,
+      "wage10thPct": 47400,
+      "wage25thPct": 64800,
+      "wage75thPct": 147600,
+      "wage90thPct": 208000,
+      "employmentCount": 3129000,
+      "jobGrowthRate10Yr": 6.0,
+      "projectedOpenings": 308800,
+      "entryLevelEducation": "Bachelor's degree",
+      "brightOutlook": false
+    },
+    {
+      "socCode": "13-2011.00",
+      "title": "Accountants and Auditors",
+      "medianPay": 79880,
+      "wage10thPct": 48700,
+      "wage25thPct": 60500,
+      "wage75thPct": 104100,
+      "wage90thPct": 137580,
+      "employmentCount": 1413100,
+      "jobGrowthRate10Yr": 4.0,
+      "projectedOpenings": 126500,
+      "entryLevelEducation": "Bachelor's degree",
+      "brightOutlook": false
+    },
+    {
+      "socCode": "17-2141.00",
+      "title": "Mechanical Engineers",
+      "medianPay": 99510,
+      "wage10thPct": 60700,
+      "wage25thPct": 75600,
+      "wage75thPct": 126400,
+      "wage90thPct": 159800,
+      "employmentCount": 299200,
+      "jobGrowthRate10Yr": 10.0,
+      "projectedOpenings": 19200,
+      "entryLevelEducation": "Bachelor's degree",
+      "brightOutlook": false
+    },
+    {
+      "socCode": "17-2061.00",
+      "title": "Computer Hardware Engineers",
+      "medianPay": 138080,
+      "wage10thPct": 80700,
+      "wage25thPct": 104300,
+      "wage75thPct": 178800,
+      "wage90thPct": 208000,
+      "employmentCount": 67200,
+      "jobGrowthRate10Yr": 5.0,
+      "projectedOpenings": 4700,
+      "entryLevelEducation": "Bachelor's degree",
+      "brightOutlook": false
+    }
+  ]
+}

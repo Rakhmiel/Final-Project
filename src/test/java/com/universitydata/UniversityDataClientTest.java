@@ -27,8 +27,7 @@ class UniversityDataClientTest {
         config = DataSourceConfig.builder()
                 .collegeScorecardApiKey("test-key")
                 .collegeScorecardBaseUrl(baseUrl)
-                .onetUsername("")
-                .onetPassword("")
+                .onetApiKey("")
                 .build();
     }
 
@@ -59,7 +58,6 @@ class UniversityDataClientTest {
         assertEquals(5, p.credentialLevel);
         assertEquals(85000, p.medianEarnings4Yr);
         assertEquals(55000, p.medianEarnings1Yr);
-        assertEquals(22000, p.medianDebt);
     }
 
     @Test
@@ -105,26 +103,18 @@ class UniversityDataClientTest {
                   "metadata": { "total": 1, "page": 0, "per_page": 100 },
                   "results": [
                     {
-                      "id": "166683",
-                      "school.name": "Test University",
-                      "latest": {
-                        "programs": {
-                          "cip_4_digit": [
-                            {
-                              "code": "1101",
-                              "title": "Computer Science",
-                              "credential": { "level": 5 },
-                              "earnings": {
-                                "highest": {
-                                  "2_yr": { "overall_median_earnings": 55000 },
-                                  "4_yr": { "overall_median_earnings": 85000 }
-                                }
-                              },
-                              "debt": { "median_debt": 22000 }
-                            }
-                          ]
+                      "latest.programs.cip_4_digit": [
+                        {
+                          "school": { "name": "Test University" },
+                          "code": "1101",
+                          "title": "Computer Science",
+                          "credential": { "level": 5 },
+                          "earnings": {
+                            "1_yr": { "overall_median_earnings": 55000 },
+                            "4_yr": { "overall_median_earnings_national": 85000 }
+                          }
                         }
-                      }
+                      ]
                     }
                   ]
                 }
