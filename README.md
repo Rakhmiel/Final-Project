@@ -21,9 +21,6 @@ This compiles, runs tests, and produces a self-contained JAR at `target/my-proje
 ## Run
 
 ```bash
-# Load a data file at startup (recommended)
-java -jar target/my-project-1.0-SNAPSHOT.jar universitydata.json
-
 # Start empty — add records via the menu or load a file from within the app
 java -jar target/my-project-1.0-SNAPSHOT.jar
 ```
