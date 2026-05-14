@@ -1,4 +1,4 @@
-package finalProject;
+package com.finalProject;
 
 import java.util.Collection;
 import java.util.Set;

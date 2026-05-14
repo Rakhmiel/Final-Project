@@ -117,7 +117,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.3.0</version>
         <configuration>
-          <mainClass>finalProject.comparisonProgram</mainClass>
+          <mainClass>com.finalProject.comparisonProgram</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -131,7 +131,7 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>finalProject.comparisonProgram</mainClass>
+                  <mainClass>com.finalProject.comparisonProgram</mainClass>
                 </transformer>
               </transformers>
               <createDependencyReducedPom>false</createDependencyReducedPom>

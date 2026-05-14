@@ -1,34 +1,27 @@
-package finalProject;
+package com.finalProject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
-import finalProject.HashSet.HashTableImpl;
+import com.finalProject.HashSet.HashTableImpl;
 
 public class comparisonProgram {
 
-    // 2024 US data — overridable at runtime or via JSON
-    private static double MEDIAN_WAGE = 59_000;
-    private static double GDPC        = 82_000;
+    private static final String DEFAULT_FILE = "data.json";
 
-    private static final String DEFAULT_FILE = "people.json";
-    private static final ArrayList<personObject> people = new ArrayList<>();
+    private static final HashTableImpl<String, MajorRecord>      MAJORS      = new HashTableImpl<>(64);
+    private static final HashTableImpl<String, OccupationRecord> OCCUPATIONS = new HashTableImpl<>(64);
     private static final Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("=== Economic Success Statistics App ===");
+        System.out.println("=== Major & Occupation Outcomes Explorer ===");
 
-        // Optional: load a JSON file passed as a command-line argument
-        // Usage: mvn exec:java -Dexec.args="mydata.json"
         if (args.length > 0) {
             System.out.println("Loading: " + args[0]);
             loadFile(args[0]);
         }
-
-        System.out.printf("Benchmarks: Median Wage = $%,.0f  |  GDPC = $%,.0f%n%n",
-                MEDIAN_WAGE, GDPC);
 
         boolean running = true;
         while (running) {
@@ -36,17 +29,16 @@ public class comparisonProgram {
             String choice = in.nextLine().trim();
             System.out.println();
             switch (choice) {
-                case "1"  -> addPerson();
-                case "2"  -> listAll();
-                case "3"  -> rankBySalary();
-                case "4"  -> rankByScore();
-                case "5"  -> statsByGroup("major");
-                case "6"  -> statsByGroup("industry");
-                case "7"  -> statsByGroup("institution");
-                case "8"  -> statsByGroup("birthplace");
-                case "9"  -> updateBenchmarks();
-                case "10" -> promptLoad();
-                case "11" -> promptSave();
+                case "1"  -> addMajor();
+                case "2"  -> addOccupation();
+                case "3"  -> listMajors();
+                case "4"  -> listOccupations();
+                case "5"  -> viewMajorOccupations();
+                case "6"  -> rankMajorsByEarnings();
+                case "7"  -> rankOccupationsByPay();
+                case "8"  -> rankOccupationsByGrowth();
+                case "9"  -> promptLoad();
+                case "10" -> promptSave();
                 case "0"  -> running = false;
                 default   -> System.out.println("Unknown option. Try again.");
             }
@@ -59,148 +51,183 @@ public class comparisonProgram {
 
     private static void printMenu() {
         System.out.println("-----------------------------------");
-        System.out.printf(" People: %d  |  Median: $%,.0f  |  GDPC: $%,.0f%n",
-                people.size(), MEDIAN_WAGE, GDPC);
+        System.out.printf(" Majors: %d  |  Occupations: %d%n", MAJORS.size(), OCCUPATIONS.size());
         System.out.println("-----------------------------------");
-        System.out.println(" 1. Add person");
-        System.out.println(" 2. List all people");
-        System.out.println(" 3. Rank by salary");
-        System.out.println(" 4. Rank by success score");
-        System.out.println(" 5. Stats by major");
-        System.out.println(" 6. Stats by industry");
-        System.out.println(" 7. Stats by institution");
-        System.out.println(" 8. Stats by birth place");
-        System.out.println(" 9. Update benchmarks");
-        System.out.println("10. Load JSON file");
-        System.out.println("11. Save to JSON file");
+        System.out.println(" 1. Add major (CIP)");
+        System.out.println(" 2. Add occupation (SOC)");
+        System.out.println(" 3. List all majors");
+        System.out.println(" 4. List all occupations");
+        System.out.println(" 5. View major → linked occupations");
+        System.out.println(" 6. Rank majors by 4-year earnings");
+        System.out.println(" 7. Rank occupations by median pay");
+        System.out.println(" 8. Rank occupations by job growth");
+        System.out.println(" 9. Load JSON file");
+        System.out.println("10. Save to JSON file");
         System.out.println(" 0. Exit");
         System.out.print("Choice: ");
     }
 
-    // ── Add person ────────────────────────────────────────────────────────────
+    // ── Add major ─────────────────────────────────────────────────────────────
 
-    private static void addPerson() {
-        System.out.println("--- Add Person ---");
-        String name        = prompt("Name");
-        int    age         = promptInt("Age");
-        double salary      = promptDouble("Salary ($)");
-        double gpa         = promptDouble("GPA (0.0 – 4.0)");
-        String institution = prompt("Educational institution");
-        String birthPlace  = prompt("Birth place (city / state / country)");
-        String major       = prompt("Major / field of study");
-        String industry    = prompt("Industry");
+    private static void addMajor() {
+        System.out.println("--- Add Major (CIP) ---");
+        String cipCode     = prompt("CIP code (e.g. 11.0101)").toUpperCase();
+        String cipTitle    = prompt("Title (e.g. Computer Science)");
+        int    level       = promptInt("Credential level  1=cert 2=assoc 3=bach 5=master 7=doctoral");
+        int    completions = promptInt("Annual completions (IPEDS)");
+        int    earn1yr     = promptInt("Median earnings 1yr post-grad ($)");
+        int    earn4yr     = promptInt("Median earnings 4yr post-grad ($)");
+        String socInput    = prompt("Related SOC codes, comma-separated (or press Enter to skip)");
 
-        personObject p = new personObject(name, age, salary, gpa,
-                institution, birthPlace, major, industry,
-                MEDIAN_WAGE, GDPC);
-        people.add(p);
-        System.out.printf("Added: %s  |  Score: %.1f  |  %s%n",
-                name, p.getSuccess(),
-                p.isSuccessful() ? "Above median wage *" : "Below median wage");
-    }
+        MajorRecord rec = new MajorRecord(cipCode, cipTitle, level);
+        rec.annualCompletions = completions;
+        rec.medianEarnings1Yr = earn1yr;
+        rec.medianEarnings4Yr = earn4yr;
 
-    // ── List / rankings ───────────────────────────────────────────────────────
-
-    private static void listAll() {
-        if (empty()) return;
-        printHeader("All People  (* = above median wage)");
-        for (int i = 0; i < people.size(); i++) {
-            System.out.printf("%3d. %s%n", i + 1, people.get(i));
-        }
-    }
-
-    private static void rankBySalary() {
-        if (empty()) return;
-        ArrayList<personObject> sorted = new ArrayList<>(people);
-        sorted.sort(Collections.reverseOrder());
-        printHeader("Ranked by Salary  (* = above median wage)");
-        for (int i = 0; i < sorted.size(); i++) {
-            personObject p = sorted.get(i);
-            System.out.printf("%3d. %-22s  $%,12.0f%s%n",
-                    i + 1, p.getName(), p.getSalary(),
-                    p.isSuccessful() ? "  *" : "");
-        }
-        printSalaryStats(sorted);
-    }
-
-    private static void rankByScore() {
-        if (empty()) return;
-        ArrayList<personObject> sorted = new ArrayList<>(people);
-        sorted.sort((a, b) -> Double.compare(b.getSuccess(), a.getSuccess()));
-        printHeader("Ranked by Success Score  (10.0 = benchmark)");
-        System.out.printf("  Benchmark = (median $%,.0f + GDPC $%,.0f) / 2 = $%,.0f%n%n",
-                MEDIAN_WAGE, GDPC, (MEDIAN_WAGE + GDPC) / 2);
-        for (int i = 0; i < sorted.size(); i++) {
-            personObject p = sorted.get(i);
-            System.out.printf("%3d. %-22s  Score: %6.2f  Salary: $%,12.0f  Major: %s%n",
-                    i + 1, p.getName(), p.getSuccess(), p.getSalary(), p.getMajor());
-        }
-        printSalaryStats(sorted);
-    }
-
-    // ── Group statistics ──────────────────────────────────────────────────────
-
-    private static void statsByGroup(String field) {
-        if (empty()) return;
-
-        // Build aggregates using the custom hash table (keyed by group name)
-        HashTableImpl<String, majorObject> table = new HashTableImpl<>(32);
-        for (personObject p : people) {
-            String key = switch (field) {
-                case "major"       -> p.getMajor();
-                case "industry"    -> p.getIndustry().toUpperCase();
-                case "institution" -> p.getInstitution().toUpperCase();
-                case "birthplace"  -> p.getBirthPlace().toUpperCase();
-                default            -> p.getMajor();
-            };
-            if (!table.containsKey(key)) {
-                table.put(key, new majorObject(key));
+        if (!socInput.isBlank()) {
+            for (String soc : socInput.split(",")) {
+                String s = soc.strip();
+                if (!s.isEmpty()) rec.relatedSocCodes.add(s);
             }
-            table.get(key).addSalary(p.getSalary());
         }
 
-        ArrayList<majorObject> sorted = table.getMajors(); // already sorted desc by avg salary
+        MAJORS.put(cipCode, rec);
+        System.out.println("Added: " + rec);
+    }
 
-        String title = "Stats by " + field.substring(0, 1).toUpperCase() + field.substring(1)
-                + "  (ranked by average salary)";
+    // ── Add occupation ────────────────────────────────────────────────────────
+
+    private static void addOccupation() {
+        System.out.println("--- Add Occupation (SOC) ---");
+        String  socCode = prompt("SOC code (e.g. 15-1252)");
+        String  title   = prompt("Title");
+        double  pay     = promptDouble("Median pay ($)");
+        double  p10     = promptDouble("10th percentile wage ($)");
+        double  p25     = promptDouble("25th percentile wage ($)");
+        double  p75     = promptDouble("75th percentile wage ($)");
+        double  p90     = promptDouble("90th percentile wage ($)");
+        long    emp     = promptLong("Total employed (national)");
+        double  growth  = promptDouble("10yr job growth rate (%)");
+        long    opens   = promptLong("Projected openings over 10yr");
+        String  edu     = prompt("Entry-level education required");
+        boolean bright  = promptYesNo("Bright Outlook? (y/n)");
+
+        OccupationRecord rec = new OccupationRecord(socCode, title);
+        rec.medianPay           = pay;
+        rec.wage10thPct         = p10;
+        rec.wage25thPct         = p25;
+        rec.wage75thPct         = p75;
+        rec.wage90thPct         = p90;
+        rec.employmentCount     = emp;
+        rec.jobGrowthRate10Yr   = growth;
+        rec.projectedOpenings   = opens;
+        rec.entryLevelEducation = edu;
+        rec.brightOutlook       = bright;
+
+        OCCUPATIONS.put(socCode, rec);
+        System.out.println("Added: " + rec);
+    }
+
+    // ── List ──────────────────────────────────────────────────────────────────
+
+    private static void listMajors() {
+        if (MAJORS.size() == 0) { System.out.println("No majors loaded."); return; }
+        printHeader("All Majors");
+        List<MajorRecord> sorted = MAJORS.getSorted(Collections.reverseOrder());
+        for (int i = 0; i < sorted.size(); i++) {
+            System.out.printf("%3d. %s%n", i + 1, sorted.get(i));
+        }
+    }
+
+    private static void listOccupations() {
+        if (OCCUPATIONS.size() == 0) { System.out.println("No occupations loaded."); return; }
+        printHeader("All Occupations");
+        List<OccupationRecord> sorted = OCCUPATIONS.getSorted(Collections.reverseOrder());
+        for (int i = 0; i < sorted.size(); i++) {
+            System.out.printf("%3d. %s%n", i + 1, sorted.get(i));
+        }
+    }
+
+    // ── Major → occupations ───────────────────────────────────────────────────
+
+    private static void viewMajorOccupations() {
+        String cipCode = prompt("CIP code").toUpperCase();
+        MajorRecord major = MAJORS.get(cipCode);
+        if (major == null) {
+            System.out.println("Major not found: " + cipCode);
+            return;
+        }
+
+        printHeader("Major: " + major.cipTitle + " (" + cipCode + ")");
+        System.out.printf("  Credential:   %s%n", major.credentialLabel());
+        System.out.printf("  Completions:  %,d / yr%n", major.annualCompletions);
+        System.out.printf("  Earnings 1yr: $%,d%n", major.medianEarnings1Yr);
+        System.out.printf("  Earnings 4yr: $%,d%n", major.medianEarnings4Yr);
+
+        if (major.relatedSocCodes == null || major.relatedSocCodes.isEmpty()) {
+            System.out.println("  No linked occupations.");
+            return;
+        }
+
+        System.out.println("\n  Linked Occupations:");
+        System.out.printf("  %-10s %-35s %12s %10s %12s %s%n",
+                "SOC", "Title", "Median Pay", "Growth", "Employed", "Bright");
+        System.out.println("  " + "-".repeat(90));
+
+        for (String soc : major.relatedSocCodes) {
+            OccupationRecord occ = OCCUPATIONS.get(soc);
+            if (occ == null) {
+                System.out.printf("  %-10s (not loaded)%n", soc);
+            } else {
+                System.out.printf("  %-10s %-35s $%,10.0f %9.1f%% %,12d %s%n",
+                        occ.socCode, occ.title, occ.medianPay,
+                        occ.jobGrowthRate10Yr, occ.employmentCount,
+                        occ.brightOutlook ? "★" : "");
+            }
+        }
+    }
+
+    // ── Rankings ──────────────────────────────────────────────────────────────
+
+    private static void rankMajorsByEarnings() {
+        if (MAJORS.size() == 0) { System.out.println("No majors loaded."); return; }
+        List<MajorRecord> sorted = MAJORS.getSorted(Collections.reverseOrder());
+        printHeader("Majors Ranked by 4-Year Earnings");
+        System.out.printf("%-4s %-12s %-35s %12s %12s %s%n",
+                "#", "CIP", "Title", "1yr Earnings", "4yr Earnings", "Completions");
+        System.out.println("-".repeat(85));
+        for (int i = 0; i < sorted.size(); i++) {
+            MajorRecord m = sorted.get(i);
+            System.out.printf("%-4d %-12s %-35s $%,10d $%,10d %,8d%n",
+                    i + 1, m.cipCode, m.cipTitle,
+                    m.medianEarnings1Yr, m.medianEarnings4Yr, m.annualCompletions);
+        }
+    }
+
+    private static void rankOccupationsByPay() {
+        if (OCCUPATIONS.size() == 0) { System.out.println("No occupations loaded."); return; }
+        printOccupationRanking("Occupations Ranked by Median Pay",
+                OCCUPATIONS.getSorted(Collections.reverseOrder()));
+    }
+
+    private static void rankOccupationsByGrowth() {
+        if (OCCUPATIONS.size() == 0) { System.out.println("No occupations loaded."); return; }
+        printOccupationRanking("Occupations Ranked by 10-Year Job Growth",
+                OCCUPATIONS.getSorted((a, b) -> Double.compare(b.jobGrowthRate10Yr, a.jobGrowthRate10Yr)));
+    }
+
+    private static void printOccupationRanking(String title, List<OccupationRecord> sorted) {
         printHeader(title);
-        System.out.printf("%-22s  %-14s  %-14s  %-14s  %s%n",
-                "Group", "Avg Salary", "Min", "Max", "People");
-        System.out.println("-".repeat(80));
-        for (majorObject g : sorted) {
-            System.out.println(g);
+        System.out.printf("%-4s %-10s %-35s %12s %10s %12s %s%n",
+                "#", "SOC", "Title", "Median Pay", "Growth", "Employed", "Bright");
+        System.out.println("-".repeat(90));
+        for (int i = 0; i < sorted.size(); i++) {
+            OccupationRecord o = sorted.get(i);
+            System.out.printf("%-4d %-10s %-35s $%,10.0f %9.1f%% %,12d %s%n",
+                    i + 1, o.socCode, o.title, o.medianPay,
+                    o.jobGrowthRate10Yr, o.employmentCount,
+                    o.brightOutlook ? "★" : "");
         }
-
-        // Overall winner
-        if (!sorted.isEmpty()) {
-            System.out.printf("%n#1 group: %s  (avg $%,.0f)%n",
-                    sorted.get(0).major(), sorted.get(0).averageSalary());
-        }
-    }
-
-    // ── Benchmarks ────────────────────────────────────────────────────────────
-
-    private static void updateBenchmarks() {
-        System.out.println("--- Update Benchmarks ---");
-        System.out.printf("Current median wage: $%,.0f%n", MEDIAN_WAGE);
-        MEDIAN_WAGE = promptDouble("New median wage ($)");
-        System.out.printf("Current GDPC: $%,.0f%n", GDPC);
-        GDPC = promptDouble("New GDPC ($)");
-        System.out.printf("Benchmark updated to $%,.0f%n", (MEDIAN_WAGE + GDPC) / 2);
-        recalculate();
-    }
-
-    // Rebuild all personObjects with the current benchmarks
-    private static void recalculate() {
-        ArrayList<personObject> updated = new ArrayList<>(people.size());
-        for (personObject p : people) {
-            updated.add(new personObject(p.getName(), p.getAge(), p.getSalary(), p.getGpa(),
-                    p.getInstitution(), p.getBirthPlace(), p.getMajor(), p.getIndustry(),
-                    MEDIAN_WAGE, GDPC));
-        }
-        people.clear();
-        people.addAll(updated);
-        System.out.println("Scores recalculated for " + people.size() + " people.");
     }
 
     // ── Save / Load ───────────────────────────────────────────────────────────
@@ -221,17 +248,11 @@ public class comparisonProgram {
 
     private static void loadFile(String path) {
         try {
-            DataManager.LoadResult result = DataManager.load(path, MEDIAN_WAGE, GDPC);
-            people.clear();
-            people.addAll(result.people);
-            // Apply benchmark overrides from file if present
-            if (result.medianWage != MEDIAN_WAGE || result.gdpc != GDPC) {
-                MEDIAN_WAGE = result.medianWage;
-                GDPC        = result.gdpc;
-                System.out.printf("Benchmarks from file: Median Wage = $%,.0f  |  GDPC = $%,.0f%n",
-                        MEDIAN_WAGE, GDPC);
-            }
-            System.out.printf("Loaded %d people from %s%n", people.size(), path);
+            DataManager.LoadResult result = DataManager.load(path);
+            for (MajorRecord m : result.majors)           MAJORS.put(m.cipCode, m);
+            for (OccupationRecord o : result.occupations) OCCUPATIONS.put(o.socCode, o);
+            System.out.printf("Loaded %d majors and %d occupations from %s%n",
+                    result.majors.size(), result.occupations.size(), path);
         } catch (IOException e) {
             System.out.println("Load failed: " + e.getMessage());
         }
@@ -239,8 +260,11 @@ public class comparisonProgram {
 
     private static void saveFile(String path) {
         try {
-            DataManager.save(people, MEDIAN_WAGE, GDPC, path);
-            System.out.printf("Saved %d people to %s%n", people.size(), path);
+            List<MajorRecord>      majorList = MAJORS.getSorted(Collections.reverseOrder());
+            List<OccupationRecord> occList   = OCCUPATIONS.getSorted(Collections.reverseOrder());
+            DataManager.save(majorList, occList, path);
+            System.out.printf("Saved %d majors and %d occupations to %s%n",
+                    majorList.size(), occList.size(), path);
         } catch (IOException e) {
             System.out.println("Save failed: " + e.getMessage());
         }
@@ -256,7 +280,15 @@ public class comparisonProgram {
     private static int promptInt(String label) {
         while (true) {
             System.out.print(label + ": ");
-            try { return Integer.parseInt(in.nextLine().trim()); }
+            try { return Integer.parseInt(in.nextLine().trim().replace(",", "")); }
+            catch (NumberFormatException e) { System.out.println("  Enter a whole number."); }
+        }
+    }
+
+    private static long promptLong(String label) {
+        while (true) {
+            System.out.print(label + ": ");
+            try { return Long.parseLong(in.nextLine().trim().replace(",", "")); }
             catch (NumberFormatException e) { System.out.println("  Enter a whole number."); }
         }
     }
@@ -269,27 +301,12 @@ public class comparisonProgram {
         }
     }
 
-    private static boolean empty() {
-        if (people.isEmpty()) {
-            System.out.println("No data yet. Add a person or load a JSON file.");
-            return true;
-        }
-        return false;
+    private static boolean promptYesNo(String label) {
+        System.out.print(label + ": ");
+        return in.nextLine().trim().toLowerCase().startsWith("y");
     }
 
     private static void printHeader(String title) {
         System.out.println("=== " + title + " ===");
-    }
-
-    private static void printSalaryStats(ArrayList<personObject> sorted) {
-        double total = 0;
-        int above = 0;
-        for (personObject p : sorted) {
-            total += p.getSalary();
-            if (p.isSuccessful()) above++;
-        }
-        double avg = total / sorted.size();
-        System.out.printf("%nGroup average salary: $%,.0f  |  Above median wage: %d / %d (%.0f%%)%n",
-                avg, above, sorted.size(), 100.0 * above / sorted.size());
     }
 }

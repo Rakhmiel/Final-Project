@@ -1,10 +1,10 @@
-package finalProject.HashSet;
+package com.finalProject.HashSet;
 
-import finalProject.HashTable;
-import finalProject.majorObject;
+import com.finalProject.HashTable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -93,19 +93,11 @@ public class HashTableImpl<Key, Value> implements HashTable<Key, Value> {
     @Override
     public int size() { return size; }
 
-    /** Returns all majorObjects stored in the table, sorted descending by average salary. */
-    @SuppressWarnings("unchecked")
-    public ArrayList<majorObject> getMajors() {
-        ArrayList<majorObject> majors = new ArrayList<>();
-        for (Entry<Key, Value> bucket : dataArray) {
-            Entry<Key, Value> current = bucket;
-            while (current != null) {
-                majors.add((majorObject) current.value);
-                current = current.next;
-            }
-        }
-        majors.sort(Collections.reverseOrder());
-        return majors;
+    /** Returns all values in the table sorted by the given comparator. */
+    public ArrayList<Value> getSorted(Comparator<? super Value> comparator) {
+        ArrayList<Value> list = new ArrayList<>(values());
+        list.sort(comparator);
+        return list;
     }
 
     private int hashValue(Key key) {
