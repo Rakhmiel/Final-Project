@@ -236,9 +236,15 @@ public class BlsOohClient {
     private static Integer parseMoneyToInt(String s) {
         if (s == null || s.isBlank()) return null;
         try {
-            String digits = s.replaceAll("[^0-9]", "");
-            return digits.isBlank() ? null : Integer.parseInt(digits);
+            // Extract first dollar amount pattern e.g. "$127,260"
+            java.util.regex.Matcher m = java.util.regex.Pattern
+                    .compile("\\$([\\d,]+)")
+                    .matcher(s);
+            if (m.find()) {
+                return Integer.parseInt(m.group(1).replace(",", ""));
+            }
         } catch (NumberFormatException e) { return null; }
+        return null;
     }
 
     /** Parse "XX%" or "XX% (much faster than average)" → double */

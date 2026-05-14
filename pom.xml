@@ -14,7 +14,6 @@
   </properties>
 
   <dependencies>
-    <!-- Testing -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -27,8 +26,6 @@
       <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
-
-    <!-- JSON -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
@@ -39,29 +36,21 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.17.1</version>
     </dependency>
-
-    <!-- HTTP -->
     <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>okhttp</artifactId>
       <version>4.12.0</version>
     </dependency>
-
-    <!-- HTML scraping -->
     <dependency>
       <groupId>org.jsoup</groupId>
       <artifactId>jsoup</artifactId>
       <version>1.17.2</version>
     </dependency>
-
-    <!-- CSV parsing -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-csv</artifactId>
       <version>1.11.0</version>
     </dependency>
-
-    <!-- Logging -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
@@ -77,38 +66,14 @@
   <build>
     <pluginManagement>
       <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.4.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.3.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.4.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.12.1</version>
-        </plugin>
+        <plugin><artifactId>maven-clean-plugin</artifactId><version>3.4.0</version></plugin>
+        <plugin><artifactId>maven-resources-plugin</artifactId><version>3.3.1</version></plugin>
+        <plugin><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version></plugin>
+        <plugin><artifactId>maven-surefire-plugin</artifactId><version>3.3.0</version></plugin>
+        <plugin><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version></plugin>
+        <plugin><artifactId>maven-install-plugin</artifactId><version>3.1.2</version></plugin>
+        <plugin><artifactId>maven-deploy-plugin</artifactId><version>3.1.2</version></plugin>
+        <plugin><artifactId>maven-site-plugin</artifactId><version>3.12.1</version></plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -117,7 +82,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.3.0</version>
         <configuration>
-          <mainClass>com.finalProject.comparisonProgram</mainClass>
+          <mainClass>com.universitydata.DataFetcher</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -131,7 +96,7 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.finalProject.comparisonProgram</mainClass>
+                  <mainClass>com.universitydata.DataFetcher</mainClass>
                 </transformer>
               </transformers>
               <createDependencyReducedPom>false</createDependencyReducedPom>

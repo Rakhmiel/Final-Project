@@ -1,4 +1,6 @@
-.DS_Store
-.class
-.lst
+*.DS_Store
+*.class
+*.lst
 /target
+university_data.json
+oe.data.1.AllData
