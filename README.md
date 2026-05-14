@@ -139,3 +139,12 @@ After the download completes, the program will offer to load the new file into t
 The CIP→SOC link (option 5) is driven by `relatedSocCodes` on each major. An occupation must be loaded in the same session for its data to appear; otherwise the SOC code is shown as `(not loaded)`.
 
 When you save (option 10), the output file uses the same format and can be loaded back in directly.
+
+### Warning: Sometimes names may be too long, and will appear like this:
+# === Occupations Ranked by 10-Year Job Growth ===
+#    SOC        Title                                 Median Pay     Growth     Employed Bright
+------------------------------------------------------------------------------------------
+1    13-1081.00 Logisticians                        $    80,880      17.0%        1,900 ★
+2    13-1081.02 Logistics Analysts                  $   131,450      15.0%            0 ★
+3    13-1111.00 Management Analysts                 $   131,450      15.0%       35,800 ★
+4    15-1253.00 Software Quality Assurance Analysts and Testers $   131,450      15.0%        1,140 ★
