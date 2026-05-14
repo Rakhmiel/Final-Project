@@ -1,0 +1,18 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Set com.universitydata to DEBUG for verbose output during development -->
+    <logger name="com.universitydata" level="INFO"/>
+
+    <!-- Quiet down OkHttp internals -->
+    <logger name="okhttp3" level="WARN"/>
+    <logger name="okio"    level="WARN"/>
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
