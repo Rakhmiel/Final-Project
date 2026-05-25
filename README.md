@@ -31,7 +31,7 @@ The program defaults to looking for `universitydata.json` in the current directo
 
 ## Data File
 
-The program reads a JSON file in the format produced by the `university-data-client` fetching pipeline. A sample file `universitydata-sample.json` is included in the project root for testing — load it via menu option 9 or pass it as an argument at startup.
+The program reads a JSON file in the format produced by the `university-data-client` fetching pipeline. It is highly recommended to pull fresh data while running the program. A sample file `universitydata-sample.json` is included in the project root for testing — load it via menu option 9 or pass it as an argument at startup.
 
 To generate a real data file from live APIs, run the `DataFetcher` in the `com.universitydata` package directly (requires a College Scorecard API key and OEWS flat files).
 
