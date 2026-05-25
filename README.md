@@ -1,5 +1,27 @@
 # Major & Occupation Outcomes Explorer
 
+## Quick Start
+
+**1. Build**
+```bash
+mvn package
+```
+
+**2. Run**
+```bash
+java -jar target/my-project-1.0-SNAPSHOT.jar
+```
+
+**3. Pull fresh data**
+
+When the menu appears, select **option 11 — Download fresh data**. This fetches live information from College Scorecard, O\*NET, OEWS, and BLS OOH, and automatically loads it into your session. **This is the recommended first step** to fully utilize the program — without it, you'll be working with an empty dataset or the limited sample file.
+
+> ⚠️ The download takes several minutes due to API rate limits. Progress will be printed as it runs.
+
+Once the download completes, all menu features (rankings, major→occupation links, earnings comparisons) will be populated with real data.
+
+---
+
 A terminal-based Java app for exploring the relationship between college majors and career outcomes. Data is stored and loaded as JSON, organized by **CIP code** (major) and **SOC code** (occupation), and linked via the O\*NET CIP→SOC crosswalk.
 
 ---
@@ -20,7 +42,7 @@ This compiles, runs tests, and produces a self-contained JAR at `target/my-proje
 
 ## Run
 
-```bashs
+```bash
 # Start empty — add records via the menu or load a file from within the app
 java -jar target/my-project-1.0-SNAPSHOT.jar
 ```
