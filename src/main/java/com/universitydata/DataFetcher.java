@@ -119,7 +119,12 @@ public class DataFetcher {
 
         // 6. Fetch OOH for each unique occupation title
         List<OohOccupation> oohList = new ArrayList<>();
-        List<String> oohUrls = svc.getOohClient().getAllOccupationUrls();
+        List<String> oohUrls = new ArrayList<>();
+        try {
+            oohUrls = svc.getOohClient().getAllOccupationUrls();
+        } catch (IOException e) {
+            System.out.println("OOH index fetch failed (skipping OOH data): " + e.getMessage());
+        }
         List<String> fetchedKeywords = new ArrayList<>();
         for (String title : majors.stream()
                 .filter(m -> m.relatedOccupationTitles != null)

@@ -24,10 +24,10 @@
     "wage75thPct" : 163380.0,
     "wage90thPct" : 189730.0,
     "employmentCount" : 24880,
-    "medianPay" : 96800,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 13800,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1211.00",
@@ -37,10 +37,10 @@
     "wage75thPct" : 125520.0,
     "wage90thPct" : 138730.0,
     "employmentCount" : 28670,
-    "medianPay" : 96800,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 13800,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1211.01",
@@ -50,10 +50,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 100750,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 58700,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1221.00",
@@ -63,10 +63,10 @@
     "wage75thPct" : 130930.0,
     "wage90thPct" : 143050.0,
     "employmentCount" : 40,
-    "medianPay" : 96800,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 13800,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1241.00",
@@ -76,10 +76,10 @@
     "wage75thPct" : 130590.0,
     "wage90thPct" : 156300.0,
     "employmentCount" : 4530,
-    "medianPay" : 123100,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 5300,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1241.01",
@@ -89,10 +89,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 64310,
-    "jobGrowthRate10Yr" : 3.0,
-    "projectedOpenings" : 8600,
-    "entryLevelEducation" : "See How to Become One",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1242.00",
@@ -102,10 +102,10 @@
     "wage75thPct" : 125220.0,
     "wage90thPct" : 154240.0,
     "employmentCount" : 5320,
-    "medianPay" : 123100,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 5300,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "15-1243.00",
@@ -115,10 +115,10 @@
     "wage75thPct" : 135630.0,
     "wage90thPct" : 154840.0,
     "employmentCount" : 900,
-    "medianPay" : 123100,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 5300,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1243.01",
@@ -128,10 +128,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 100750,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 58700,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1244.00",
@@ -141,10 +141,10 @@
     "wage75thPct" : 104500.0,
     "wage90thPct" : 128050.0,
     "employmentCount" : 32810,
-    "medianPay" : 123100,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 5300,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "15-1253.00",
@@ -154,10 +154,10 @@
     "wage75thPct" : 123590.0,
     "wage90thPct" : 138440.0,
     "employmentCount" : 1140,
-    "medianPay" : 131450,
-    "jobGrowthRate10Yr" : 15.0,
-    "projectedOpenings" : 287900,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1255.00",
@@ -167,10 +167,10 @@
     "wage75thPct" : 96980.0,
     "wage90thPct" : 121670.0,
     "employmentCount" : 1130,
-    "medianPay" : 95380,
-    "jobGrowthRate10Yr" : 7.0,
-    "projectedOpenings" : 15500,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1255.01",
@@ -180,10 +180,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 95380,
-    "jobGrowthRate10Yr" : 7.0,
-    "projectedOpenings" : 15500,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.00",
@@ -193,10 +193,10 @@
     "wage75thPct" : 94450.0,
     "wage90thPct" : 118940.0,
     "employmentCount" : 13280,
-    "medianPay" : 96800,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 13800,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.01",
@@ -206,10 +206,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 123100,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 5300,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.02",
@@ -219,10 +219,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 64310,
-    "jobGrowthRate10Yr" : 3.0,
-    "projectedOpenings" : 8600,
-    "entryLevelEducation" : "See How to Become One",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.03",
@@ -232,10 +232,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 100750,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 58700,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.04",
@@ -245,10 +245,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 131450,
-    "jobGrowthRate10Yr" : 15.0,
-    "projectedOpenings" : 287900,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.05",
@@ -258,10 +258,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 38390,
+    "medianPay" : 0,
     "jobGrowthRate10Yr" : 0.0,
-    "projectedOpenings" : 5100,
-    "entryLevelEducation" : "High school diploma or equivalent",
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.06",
@@ -271,10 +271,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 131450,
-    "jobGrowthRate10Yr" : 15.0,
-    "projectedOpenings" : 287900,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.07",
@@ -284,10 +284,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 134830,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 4400,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.08",
@@ -297,10 +297,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 96800,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 13800,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "15-1299.09",
@@ -310,10 +310,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "25-1021.00",
@@ -323,10 +323,10 @@
     "wage75thPct" : 129700.0,
     "wage90thPct" : 195280.0,
     "employmentCount" : 6020,
-    "medianPay" : 96800,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 13800,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-1011.00",
@@ -349,10 +349,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 38390,
+    "medianPay" : 0,
     "jobGrowthRate10Yr" : 0.0,
-    "projectedOpenings" : 5100,
-    "entryLevelEducation" : "High school diploma or equivalent",
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-1021.00",
@@ -362,10 +362,10 @@
     "wage75thPct" : 165600.0,
     "wage90thPct" : 211870.0,
     "employmentCount" : 86660,
-    "medianPay" : 48620,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 62400,
-    "entryLevelEducation" : "High school diploma or equivalent",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-2022.00",
@@ -375,10 +375,10 @@
     "wage75thPct" : 150280.0,
     "wage90thPct" : 184620.0,
     "employmentCount" : 780,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-3012.00",
@@ -388,10 +388,10 @@
     "wage75thPct" : 138660.0,
     "wage90thPct" : 172500.0,
     "employmentCount" : 26920,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-3013.00",
@@ -401,10 +401,10 @@
     "wage75thPct" : 128610.0,
     "wage90thPct" : 159250.0,
     "employmentCount" : 21130,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3013.01",
@@ -414,10 +414,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 38390,
+    "medianPay" : 0,
     "jobGrowthRate10Yr" : 0.0,
-    "projectedOpenings" : 5100,
-    "entryLevelEducation" : "High school diploma or equivalent",
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3051.00",
@@ -427,10 +427,10 @@
     "wage75thPct" : 158840.0,
     "wage90thPct" : 197750.0,
     "employmentCount" : 2640,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3051.01",
@@ -440,10 +440,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 96800,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 13800,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3051.02",
@@ -453,10 +453,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3051.03",
@@ -466,10 +466,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3051.04",
@@ -479,10 +479,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3051.06",
@@ -492,10 +492,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3071.00",
@@ -505,10 +505,10 @@
     "wage75thPct" : 135530.0,
     "wage90thPct" : 167080.0,
     "employmentCount" : 9790,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-3071.04",
@@ -518,10 +518,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-3111.00",
@@ -531,10 +531,10 @@
     "wage75thPct" : 151260.0,
     "wage90thPct" : 181690.0,
     "employmentCount" : 1370,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "11-3121.00",
@@ -544,10 +544,10 @@
     "wage75thPct" : 162090.0,
     "wage90thPct" : 196460.0,
     "employmentCount" : 16840,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-3131.00",
@@ -557,10 +557,10 @@
     "wage75thPct" : 145220.0,
     "wage90thPct" : 176620.0,
     "employmentCount" : 1960,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9021.00",
@@ -570,10 +570,10 @@
     "wage75thPct" : 138610.0,
     "wage90thPct" : 171620.0,
     "employmentCount" : 11240,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9072.00",
@@ -583,10 +583,10 @@
     "wage75thPct" : 116480.0,
     "wage90thPct" : 143670.0,
     "employmentCount" : 8720,
-    "medianPay" : 38390,
+    "medianPay" : 0,
     "jobGrowthRate10Yr" : 0.0,
-    "projectedOpenings" : 5100,
-    "entryLevelEducation" : "High school diploma or equivalent",
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9151.00",
@@ -596,10 +596,10 @@
     "wage75thPct" : 126340.0,
     "wage90thPct" : 161370.0,
     "employmentCount" : 22250,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9179.00",
@@ -622,10 +622,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 46180,
-    "jobGrowthRate10Yr" : 12.0,
-    "projectedOpenings" : 44100,
-    "entryLevelEducation" : "High school diploma or equivalent",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9179.02",
@@ -635,10 +635,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9199.00",
@@ -661,10 +661,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9199.02",
@@ -674,10 +674,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9199.08",
@@ -687,10 +687,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9199.09",
@@ -700,10 +700,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9199.10",
@@ -713,10 +713,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "11-9199.11",
@@ -726,10 +726,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 121440,
-    "jobGrowthRate10Yr" : 2.0,
-    "projectedOpenings" : 4600,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1051.00",
@@ -739,10 +739,10 @@
     "wage75thPct" : 120440.0,
     "wage90thPct" : 164350.0,
     "employmentCount" : 300,
-    "medianPay" : 77070,
-    "jobGrowthRate10Yr" : 4.0,
-    "projectedOpenings" : 9300,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : false
   }, {
     "socCode" : "13-1071.00",
@@ -752,10 +752,10 @@
     "wage75thPct" : 90200.0,
     "wage90thPct" : 110150.0,
     "employmentCount" : 51800,
-    "medianPay" : 140030,
-    "jobGrowthRate10Yr" : 5.0,
-    "projectedOpenings" : 11100,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1081.00",
@@ -765,10 +765,10 @@
     "wage75thPct" : 95400.0,
     "wage90thPct" : 107990.0,
     "employmentCount" : 1900,
-    "medianPay" : 80880,
-    "jobGrowthRate10Yr" : 17.0,
-    "projectedOpenings" : 40300,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1081.01",
@@ -778,10 +778,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 134830,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 4400,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1081.02",
@@ -791,10 +791,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 131450,
-    "jobGrowthRate10Yr" : 15.0,
-    "projectedOpenings" : 287900,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1082.00",
@@ -804,10 +804,10 @@
     "wage75thPct" : 112610.0,
     "wage90thPct" : 135870.0,
     "employmentCount" : 28660,
-    "medianPay" : 100750,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 58700,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1111.00",
@@ -817,10 +817,10 @@
     "wage75thPct" : 119140.0,
     "wage90thPct" : 135330.0,
     "employmentCount" : 35800,
-    "medianPay" : 131450,
-    "jobGrowthRate10Yr" : 15.0,
-    "projectedOpenings" : 287900,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1141.00",
@@ -830,10 +830,10 @@
     "wage75thPct" : 88390.0,
     "wage90thPct" : 104580.0,
     "employmentCount" : 11900,
-    "medianPay" : 100750,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 58700,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1199.00",
@@ -869,10 +869,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 100750,
-    "jobGrowthRate10Yr" : 6.0,
-    "projectedOpenings" : 58700,
-    "entryLevelEducation" : "Bachelor's degree",
+    "medianPay" : 0,
+    "jobGrowthRate10Yr" : 0.0,
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "13-1199.06",
@@ -895,10 +895,10 @@
     "wage75thPct" : 0.0,
     "wage90thPct" : 0.0,
     "employmentCount" : 0,
-    "medianPay" : 38390,
+    "medianPay" : 0,
     "jobGrowthRate10Yr" : 0.0,
-    "projectedOpenings" : 5100,
-    "entryLevelEducation" : "High school diploma or equivalent",
+    "projectedOpenings" : 0,
+    "entryLevelEducation" : "",
     "brightOutlook" : true
   }, {
     "socCode" : "25-1011.00",

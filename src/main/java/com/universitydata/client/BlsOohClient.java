@@ -42,9 +42,9 @@ public class BlsOohClient {
 
     private static final Logger log = LoggerFactory.getLogger(BlsOohClient.class);
 
-    private static final String INDEX_PATH        = "/ooh/a-z-index.htm";
+    private static final String INDEX_PATH        = "/a-z-index.htm";
     private static final String USER_AGENT        =
-            "Mozilla/5.0 (compatible; UniversityDataClient/1.0; +educational-research)";
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
     private static final int    JSOUP_TIMEOUT_MS  = 30_000;
 
     private final DataSourceConfig config;
@@ -222,11 +222,33 @@ public class BlsOohClient {
     }
 
     private Document fetchDocument(String url) throws IOException {
+        String baseUrl = config.getOohBaseUrl();
+        // Seed a session cookie by visiting the BLS homepage first (one-time, lazy)
+        if (sessionCookies == null) {
+            sessionCookies = Jsoup.connect(baseUrl)
+                    .userAgent(USER_AGENT)
+                    .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+                    .header("Accept-Language", "en-US,en;q=0.5")
+                    .header("Connection", "keep-alive")
+                    .header("Upgrade-Insecure-Requests", "1")
+                    .timeout(JSOUP_TIMEOUT_MS)
+                    .execute()
+                    .cookies();
+        }
         return Jsoup.connect(url)
                 .userAgent(USER_AGENT)
+                .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+                .header("Accept-Language", "en-US,en;q=0.5")
+                .header("Accept-Encoding", "gzip, deflate, br")
+                .header("Connection", "keep-alive")
+                .header("Upgrade-Insecure-Requests", "1")
+                .header("Referer", baseUrl + "/")
+                .cookies(sessionCookies)
                 .timeout(JSOUP_TIMEOUT_MS)
                 .get();
     }
+
+    private java.util.Map<String, String> sessionCookies = null;
 
     // ---------------------------------------------------------------
     // Value parsers
